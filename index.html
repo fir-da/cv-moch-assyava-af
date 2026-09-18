@@ -12,8 +12,29 @@
 
 <!-- ====== TAILWIND (CDN) + KONFIGURASI ====== -->
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="js/tailwind-config.js"></script>
-
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy:     '#101B2D',
+          navydeep: '#0A1220',
+          paper:    '#FFFFFF',
+          mist:     '#F1F3F6',
+          line:     '#DDE1E7',
+          ink:      '#1B2430',
+          slate:    '#5B6472',
+          signal:   '#1E2C41',
+        },
+        fontFamily: {
+          serif: ['Fraunces', 'serif'],
+          sans:  ['Inter', 'sans-serif'],
+        },
+      }
+    }
+  }
+</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
