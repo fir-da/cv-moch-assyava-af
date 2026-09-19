@@ -496,7 +496,50 @@
 </footer>
 
 <!-- ====== JAVASCRIPT ====== -->
-<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Logika untuk efek scroll pada header
+    const header = document.getElementById('header');
+    if (header) {
+      const onScroll = () => header.classList.toggle('compact', window.scrollY > 40);
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
 
+    // 2. Logika untuk mengubah teks logo "Assyava" menjadi "AS"
+    const logoText = document.getElementById('logoText');
+    if (logoText) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          logoText.textContent = 'AS';
+        } else {
+          logoText.textContent = 'Assyava';
+        }
+      });
+    }
+
+    // 3. Logika untuk otomatisasi tahun di Footer
+    const yearSpan = document.getElementById('year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+
+    // 4. Logika Menu Mobile
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
+    
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        iconOpen.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+      });
+    }
+
+  });
+</script>
 </body>
 </html>
