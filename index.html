@@ -536,7 +536,7 @@
 
 <!-- ====== JAVASCRIPT ====== -->
 <script>
-  // ==========================================
+// ==========================================
   // 1. FUNGSI UNTUK PREVIEW DOKUMEN (MODAL)
   // ==========================================
   function openPreview(fileUrl, title, isCV = false) {
@@ -545,22 +545,27 @@
     const modalTitle = document.getElementById('modalTitle');
     const downloadBtn = document.getElementById('modalDownloadBtn');
 
-    // Masukkan file ke dalam iframe dan ubah judulnya
-    iframe.src = cv_moch_assyava_a_f.pdf;
-    modalTitle.textContent = cv_moch_assyava_a_f ;
+    // 1. Rangkai URL lengkap GitHub Pages Anda dengan nama file PDF yang sedang diklik
+    const githubUrl = "https://fir-da.github.io/cv-moch-assyava-af/" + fileUrl;
+    
+    // 2. Gunakan Google Viewer agar PDF langsung tampil (kebal IDM & tidak terunduh otomatis)
+    iframe.src = "https://docs.google.com/viewer?url=" + encodeURIComponent(githubUrl) + "&embedded=true";
+    
+    // Ubah judul modal sesuai tombol yang diklik
+    modalTitle.textContent = title;
 
-    // Cek apakah ini CV atau dokumen biasa
+    // Cek apakah ini CV (true) atau dokumen biasa (false)
     if (isCV) {
-      downloadBtn.href = cv_moch_assyava_a_f.pdf;
-      downloadBtn.classList.remove('hidden');
+      downloadBtn.href = fileUrl; // Pasang link unduh ke tombol
+      downloadBtn.classList.remove('hidden'); // Munculkan tombol
     } else {
-      downloadBtn.classList.add('hidden');
+      downloadBtn.classList.add('hidden'); // Sembunyikan tombol
     }
 
-    // Tampilkan Modal
+    // Tampilkan Modal di layar
     modal.classList.remove('hidden');
     modal.classList.add('flex');
-    document.body.style.overflow = 'hidden'; // Kunci scroll layar belakang
+    document.body.style.overflow = 'hidden'; // Kunci scroll halaman belakang
   }
 
   function closePreview() {
@@ -569,10 +574,9 @@
     
     modal.classList.add('hidden');
     modal.classList.remove('flex');
-    document.body.style.overflow = 'auto'; // Buka kunci scroll layar belakang
+    document.body.style.overflow = 'auto'; // Buka kembali scroll halaman
     iframe.src = ""; // Kosongkan iframe agar hemat memori
   }
-
   // ==========================================
   // 2. FUNGSI TAMPILAN WEB (HEADER, MENU, DLL)
   // ==========================================
