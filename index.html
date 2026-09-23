@@ -486,6 +486,42 @@
 </main>
 
 <!-- =========================================================
+     MODAL PREVIEW DOKUMEN
+========================================================== -->
+<div id="previewModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-ink/80 backdrop-blur-sm p-4 md:p-8 transition-opacity">
+  <div class="bg-paper w-full max-w-5xl h-[85vh] md:h-[90vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden relative">
+    
+    <!-- Header Modal -->
+    <div class="flex items-center justify-between px-6 py-4 border-b border-line bg-white">
+      <h3 id="modalTitle" class="font-serif text-lg font-semibold text-navy">Preview Dokumen</h3>
+      <div class="flex items-center gap-4">
+        
+        <!-- Tombol Unduh (Hanya muncul untuk CV) -->
+        <a id="modalDownloadBtn" href="#" download class="hidden inline-flex items-center gap-2 px-5 py-2 rounded-full bg-navy text-white text-sm font-medium hover:bg-navydeep transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          Unduh CV
+        </a>
+        
+        <!-- Tombol Tutup -->
+        <button onclick="closePreview()" class="p-2 bg-mist rounded-full text-slate hover:text-signal hover:bg-line transition-colors" title="Tutup">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Body Modal (Area Preview PDF/Gambar) -->
+    <div class="flex-grow bg-slate-100 relative">
+      <iframe id="modalIframe" src="" class="absolute inset-0 w-full h-full border-0"></iframe>
+    </div>
+    
+  </div>
+</div>
+        
+<!-- =========================================================
      FOOTER
 ========================================================== -->
 <footer class="bg-navydeep text-white/70">
@@ -497,6 +533,46 @@
 
 <!-- ====== JAVASCRIPT ====== -->
 <script>
+  // ==========================================
+  // 1. FUNGSI UNTUK PREVIEW DOKUMEN (MODAL)
+  // ==========================================
+  function openPreview(fileUrl, title, isCV = false) {
+    const modal = document.getElementById('previewModal');
+    const iframe = document.getElementById('modalIframe');
+    const modalTitle = document.getElementById('modalTitle');
+    const downloadBtn = document.getElementById('modalDownloadBtn');
+
+    // Masukkan file ke dalam iframe dan ubah judulnya
+    iframe.src = fileUrl;
+    modalTitle.textContent = title;
+
+    // Cek apakah ini CV atau dokumen biasa
+    if (isCV) {
+      downloadBtn.href = fileUrl;
+      downloadBtn.classList.remove('hidden');
+    } else {
+      downloadBtn.classList.add('hidden');
+    }
+
+    // Tampilkan Modal
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden'; // Kunci scroll layar belakang
+  }
+
+  function closePreview() {
+    const modal = document.getElementById('previewModal');
+    const iframe = document.getElementById('modalIframe');
+    
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = 'auto'; // Buka kunci scroll layar belakang
+    iframe.src = ""; // Kosongkan iframe agar hemat memori
+  }
+
+  // ==========================================
+  // 2. FUNGSI TAMPILAN WEB (HEADER, MENU, DLL)
+  // ==========================================
   document.addEventListener("DOMContentLoaded", () => {
     
     // 1. Logika untuk efek scroll pada header
