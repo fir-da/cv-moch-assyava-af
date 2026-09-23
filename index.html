@@ -546,12 +546,12 @@
     const downloadBtn = document.getElementById('modalDownloadBtn');
 
     // Masukkan file ke dalam iframe dan ubah judulnya
-    iframe.src = fileUrl;
-    modalTitle.textContent = title;
+    iframe.src = cv_moch_assyava_a_f.pdf;
+    modalTitle.textContent = cv_moch_assyava_a_f ;
 
     // Cek apakah ini CV atau dokumen biasa
     if (isCV) {
-      downloadBtn.href = fileUrl;
+      downloadBtn.href = cv_moch_assyava_a_f.pdf;
       downloadBtn.classList.remove('hidden');
     } else {
       downloadBtn.classList.add('hidden');
