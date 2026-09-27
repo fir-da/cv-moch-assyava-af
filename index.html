@@ -48,18 +48,18 @@
 </a>
 
     <nav class="hidden md:flex items-center gap-9 text-[15px] text-ink">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#sertifikasi" class="nav-link">Sertifikasi</a>
-      <a href="#resume" class="nav-link">Resume</a>
-      <a href="#kontak" class="nav-link">Kontak</a>
+      <a href="#home" class="nav-link hover:text-navy transition-colors">Home</a>
+      <a href="#sertifikasi" class="nav-link hover:text-navy transition-colors">Sertifikasi</a>
+      <a href="#resume" class="nav-link hover:text-navy transition-colors">Resume</a>
+      <a href="#kontak" class="nav-link hover:text-navy transition-colors">Kontak</a>
       <a href="#kontak"
-         class="ml-2 inline-flex items-center px-2.5 py-1.5 rounded-full bg-navy text-white text-sm font-medium hover:bg-navy transition-colors">
+         class="ml-2 inline-flex items-center px-4 py-2 rounded-full bg-navy text-white text-sm font-medium hover:bg-navydeep transition-colors">
         Hubungi Saya
       </a>
     </nav>
 
     <button id="menuBtn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu"
-            class="md:hidden w-10 h-10 flex items-center justify-center rounded-full border border-line">
+            class="md:hidden w-10 h-10 flex items-center justify-center rounded-full border border-line focus:outline-none focus:ring-2 focus:ring-navy/20">
       <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
         <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
@@ -69,13 +69,13 @@
     </button>
   </div>
 
-  <div id="mobileMenu" class="hidden md:hidden border-t border-line bg-paper">
-    <nav class="flex flex-col px-6 py-4 gap-1 text-[15px]">
-      <a href="#home" class="py-2.5 nav-mobile-link">Home</a>
-      <a href="#sertifikasi" class="py-2.5 nav-mobile-link">Sertifikasi</a>
-      <a href="#resume" class="py-2.5 nav-mobile-link">Resume</a>
-      <a href="#kontak" class="py-2.5 nav-mobile-link">Kontak</a>
-      <a href="#kontak" class="mt-2 mb-1 text-center px-5 py-2.5 rounded-full bg-navy text-white font-medium">
+  <div id="mobileMenu" class="hidden md:hidden border-t border-line bg-paper shadow-lg absolute w-full">
+    <nav class="flex flex-col px-6 py-4 gap-2 text-[15px]">
+      <a href="#home" class="py-2.5 nav-mobile-link font-medium">Home</a>
+      <a href="#sertifikasi" class="py-2.5 nav-mobile-link font-medium">Sertifikasi</a>
+      <a href="#resume" class="py-2.5 nav-mobile-link font-medium">Resume</a>
+      <a href="#kontak" class="py-2.5 nav-mobile-link font-medium">Kontak</a>
+      <a href="#kontak" class="mt-3 mb-2 text-center px-5 py-3 rounded-full bg-navy text-white font-medium hover:bg-navydeep transition-colors">
         Hubungi Saya
       </a>
     </nav>
@@ -88,43 +88,42 @@
        HERO SECTION
   ========================================================== -->
   <section id="home" class="scroll-mt-20 bg-gradient-to-b from-slate-100 to-transparent border-b border-line">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 pt-20 pb-20 md:pt-28 md:pb-28 grid md:grid-cols-[1.15fr,0.85fr] gap-14 md:gap-10 items-center">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 pt-12 pb-16 md:pt-28 md:pb-28 grid md:grid-cols-[1.15fr,0.85fr] gap-10 md:gap-12 items-center">
 
-      <div class="order-2 md:order-1">
-        <p class="fade-in-up text-signal text-sm font-medium mb-4">Halo, perkenalkan saya</p>
+      <div class="order-2 md:order-1 text-center md:text-left">
+        <p class="fade-in-up text-signal text-sm font-medium mb-3 md:mb-4">Halo, perkenalkan saya</p>
 
-        <h1 class="fade-in-up delay-1 font-serif text-4xl sm:text-5xl md:text-[3.4rem] leading-[1.08] font-semibold text-navy">
+        <h1 class="fade-in-up delay-1 font-serif text-[2rem] sm:text-4xl md:text-[3.4rem] leading-tight md:leading-[1.08] font-semibold text-navy">
           Mochammad Assyava'<br class="hidden sm:block"> Aulia Firdaus
         </h1>
 
-        <p class="fade-in-up delay-2 mt-5 text-lg md:text-xl text-slate max-w-md">
+        <p class="fade-in-up delay-2 mt-4 md:mt-5 text-base md:text-xl text-slate max-w-md mx-auto md:mx-0">
           Lulusan S1 Manajemen — Manajemen & Sumber Daya Manusia
         </p>
 
-        <p class="fade-in-up delay-3 mt-6 text-[15px] leading-relaxed text-slate max-w-md">
+        <p class="fade-in-up delay-3 mt-4 md:mt-6 text-[14px] md:text-[15px] leading-relaxed text-slate max-w-md mx-auto md:mx-0">
           Mengelola administrasi operasional secara sistematis dan berbasis data. Berbekal pengalaman di PT Kereta Api Indonesia (Persero) serta rekam jejak kepemimpinan organisasi untuk mendukung efisiensi perusahaan.
         </p>
 
-<div class="fade-in-up delay-4 mt-9 flex flex-wrap gap-3.5">
+        <div class="fade-in-up delay-4 mt-8 md:mt-9 flex flex-col sm:flex-row flex-wrap gap-3.5 justify-center md:justify-start">
           <a href="https://wa.me/6289686903350"
-             class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-navy text-white text-sm font-medium hover:bg-navydeep transition-colors">
+             class="inline-flex justify-center items-center gap-2 px-6 py-3 rounded-full bg-navy text-white text-sm font-medium hover:bg-navydeep transition-colors">
             Hubungi Saya
           </a>
           
-          <!-- Tombol CV Baru dengan fitur Modal Preview -->
           <button onclick="openPreview('cv_moch_assyava_a_f.pdf', 'CV - Mochammad Assyava', true)" 
-                  class="inline-flex items-center px-5 py-2.5 rounded-full border border-line text-navy text-sm font-medium hover:bg-slate-50 transition-colors">
+                  class="inline-flex justify-center items-center px-5 py-3 sm:py-2.5 rounded-full border border-line text-navy text-sm font-medium hover:bg-slate-50 transition-colors">
             Lihat & Unduh CV
           </button>
         </div>
       </div>
 
-      <div class="order-1 md:order-2 flex justify-center md:justify-end">
-        <div class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72">
-          <div class="absolute -inset-3 rounded-[2rem] border border-line -z-10"></div>
+      <div class="order-1 md:order-2 flex justify-center md:justify-end mb-4 md:mb-0">
+        <div class="relative w-48 h-48 sm:w-56 sm:h-56 md:w-72 md:h-72">
+          <div class="absolute -inset-2 md:-inset-3 rounded-[1.5rem] md:rounded-[2rem] border border-line -z-10"></div>
           <img src="foto.jpg"
                alt="Foto profil Mochammad Assyava' Aulia Firdaus"
-               class="w-full h-full object-cover object-top rounded-[1.75rem] border border-line">
+               class="w-full h-full object-cover object-top rounded-[1.25rem] md:rounded-[1.75rem] border border-line shadow-sm">
         </div>
       </div>
 
@@ -132,55 +131,55 @@
   </section>
 
   <!-- =========================================================
-       FOKUS KEAHLIAN (PENGGANTI TENTANG SAYA)
+       FOKUS KEAHLIAN
   ========================================================== -->
   <section id="tentang" class="scroll-mt-24 bg-mist border-y border-line">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-18 md:py-24 grid md:grid-cols-[0.7fr,1.3fr] gap-8 md:gap-16">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-14 md:py-24 grid md:grid-cols-[0.7fr,1.3fr] gap-6 md:gap-16">
       <div>
-        <h2 class="font-serif text-2xl md:text-3xl font-semibold text-navy">Fokus Keahlian</h2>
+        <h2 class="font-serif text-2xl md:text-3xl font-semibold text-navy text-center md:text-left">Fokus Keahlian</h2>
       </div>
       
-      <div class="space-y-6 max-w-2xl">
-        <p class="text-[15px] md:text-base leading-relaxed text-ink mb-6">
+      <div class="space-y-6 max-w-2xl mx-auto md:mx-0">
+        <p class="text-[14px] md:text-base leading-relaxed text-ink mb-4 md:mb-6 text-center md:text-left">
           Lulusan S1 Manajemen Universitas Trunojoyo Madura. Terbiasa memimpin tim, menyusun prosedur administratif, dan mengoptimalkan perangkat lunak untuk efisiensi operasional.
         </p>
         
         <!-- Skill Badges -->
-        <div class="flex flex-wrap gap-3">
-          <span class="px-4 py-2 text-sm font-medium rounded-lg bg-white border border-line text-ink">HR Administration</span>
-          <span class="px-4 py-2 text-sm font-medium rounded-lg bg-white border border-line text-ink">Document Control</span>
-          <span class="px-4 py-2 text-sm font-medium rounded-lg bg-navy text-white shadow-sm">Rekapitulasi & Logika Data Dasar</span>
-          <span class="px-4 py-2 text-sm font-medium rounded-lg bg-navy text-white shadow-sm">Event & Team Coordination</span>
+        <div class="flex flex-wrap gap-2.5 justify-center md:justify-start">
+          <span class="px-3.5 md:px-4 py-1.5 md:py-2 text-[13px] md:text-sm font-medium rounded-lg bg-white border border-line text-ink">HR Administration</span>
+          <span class="px-3.5 md:px-4 py-1.5 md:py-2 text-[13px] md:text-sm font-medium rounded-lg bg-white border border-line text-ink">Document Control</span>
+          <span class="px-3.5 md:px-4 py-1.5 md:py-2 text-[13px] md:text-sm font-medium rounded-lg bg-navy text-white shadow-sm">Rekapitulasi & Logika Data Dasar</span>
+          <span class="px-3.5 md:px-4 py-1.5 md:py-2 text-[13px] md:text-sm font-medium rounded-lg bg-navy text-white shadow-sm">Event & Team Coordination</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- =========================================================
-       SERTIFIKASI & DOKUMEN AKADEMIS (KARTU KLIK)
+       SERTIFIKASI & DOKUMEN AKADEMIS
   ========================================================== -->
   <section id="sertifikasi" class="scroll-mt-20">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-18 md:py-24">
-      <div class="mb-12 max-w-xl">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-14 md:py-24">
+      <div class="mb-8 md:mb-12 max-w-xl text-center md:text-left mx-auto md:mx-0">
         <h2 class="font-serif text-2xl md:text-3xl font-semibold text-navy">Sertifikasi & Dokumen Akademis</h2>
-        <p class="mt-3 text-slate text-[15px]">
+        <p class="mt-3 text-slate text-[14px] md:text-[15px]">
           Dokumen ijazah, sertifikasi, dan pelatihan yang telah saya tempuh untuk mendukung karier di bidang administrasi, human capital, dan analisis data.
         </p>
       </div>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
 
        <!-- Kartu 1: Ijazah -->
-        <div onclick="openPreview('sample.pdf', 'Akreditasi & Ijazah', false)" 
-             class="border border-line rounded-2xl p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer">
-          <span class="text-xs font-medium text-signal mb-3">Pendidikan Formal</span>
-          <h3 class="font-serif text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
+        <div onclick="openPreview('ijazah.pdf', 'Akreditasi & Ijazah', false)" 
+             class="border border-line rounded-2xl p-5 md:p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer active:scale-[0.98]">
+          <span class="text-[11px] md:text-xs font-medium text-signal mb-2 md:mb-3">Pendidikan Formal</span>
+          <h3 class="font-serif text-base md:text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
             Akreditasi & Ijazah
           </h3>
-          <p class="mt-2 text-sm text-slate leading-relaxed flex-grow">
+          <p class="mt-2 text-[13px] md:text-sm text-slate leading-relaxed flex-grow">
             Universitas Trunojoyo Madura.
           </p>
-          <div class="mt-5 flex items-center gap-1.5 text-sm font-semibold text-navy group-hover:text-signal transition-colors">
+          <div class="mt-4 md:mt-5 flex items-center gap-1.5 text-[13px] md:text-sm font-semibold text-navy group-hover:text-signal transition-colors">
             Lihat Dokumen
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -189,16 +188,16 @@
         </div>
 
         <!-- Kartu 2: Sertifikat BNSP -->
-        <div onclick="openPreview('Mochammad Assyava Aulia Firdaus (BNSP).pdf', 'Badan Nasional Sertifikasi Profesi', false)" 
-             class="border border-line rounded-2xl p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer">
-          <span class="text-xs font-medium text-signal mb-3">Sertifikasi Profesi</span>
-          <h3 class="font-serif text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
+        <div onclick="openPreview('sertifikat-bnsp.pdf', 'Badan Nasional Sertifikasi Profesi', false)" 
+             class="border border-line rounded-2xl p-5 md:p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer active:scale-[0.98]">
+          <span class="text-[11px] md:text-xs font-medium text-signal mb-2 md:mb-3">Sertifikasi Profesi</span>
+          <h3 class="font-serif text-base md:text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
             Human Capital Staff
           </h3>
-          <p class="mt-2 text-sm text-slate leading-relaxed flex-grow">
+          <p class="mt-2 text-[13px] md:text-sm text-slate leading-relaxed flex-grow">
             Badan Nasional Sertifikasi Profesi (BNSP).
           </p>
-          <div class="mt-5 flex items-center gap-1.5 text-sm font-semibold text-navy group-hover:text-signal transition-colors">
+          <div class="mt-4 md:mt-5 flex items-center gap-1.5 text-[13px] md:text-sm font-semibold text-navy group-hover:text-signal transition-colors">
             Lihat Dokumen
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -207,16 +206,16 @@
         </div>
 
         <!-- Kartu 3: Sertifikat BKI -->
-        <div onclick="openPreview('Mochammad Assyava Aulia Firdaus (BKI).pdf', 'Badan Kurasi Indonesia', false)" 
-             class="border border-line rounded-2xl p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer">
-          <span class="text-xs font-medium text-signal mb-3">Sertifikasi Profesi</span>
-          <h3 class="font-serif text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
+        <div onclick="openPreview('sertifikat-bki.pdf', 'Badan Kurasi Indonesia', false)" 
+             class="border border-line rounded-2xl p-5 md:p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer active:scale-[0.98]">
+          <span class="text-[11px] md:text-xs font-medium text-signal mb-2 md:mb-3">Sertifikasi Profesi</span>
+          <h3 class="font-serif text-base md:text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
             Human Capital Staff
           </h3>
-          <p class="mt-2 text-sm text-slate leading-relaxed flex-grow">
+          <p class="mt-2 text-[13px] md:text-sm text-slate leading-relaxed flex-grow">
             Badan Kurasi Indonesia.
           </p>
-          <div class="mt-5 flex items-center gap-1.5 text-sm font-semibold text-navy group-hover:text-signal transition-colors">
+          <div class="mt-4 md:mt-5 flex items-center gap-1.5 text-[13px] md:text-sm font-semibold text-navy group-hover:text-signal transition-colors">
             Lihat Dokumen
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -225,23 +224,23 @@
         </div>
 
         <!-- Kartu 4: Data Analyst -->
-        <div onclick="openPreview('Mochammad Assyava Aulia Firdaus (IBLU).pdf', 'Iblu Academy', false)" 
-             class="border border-line rounded-2xl p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer">
-          <span class="text-xs font-medium text-signal mb-3">Pelatihan</span>
-          <h3 class="font-serif text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
+        <div onclick="openPreview('sertifikat-iblu.pdf', 'Iblu Academy', false)" 
+             class="border border-line rounded-2xl p-5 md:p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer active:scale-[0.98]">
+          <span class="text-[11px] md:text-xs font-medium text-signal mb-2 md:mb-3">Pelatihan</span>
+          <h3 class="font-serif text-base md:text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
             Data Analyst
           </h3>
-          <p class="mt-2 text-sm text-slate leading-relaxed flex-grow">
+          <p class="mt-2 text-[13px] md:text-sm text-slate leading-relaxed flex-grow">
             Iblu Academy
           </p>
-          <div class="mt-5 flex items-center gap-1.5 text-sm font-semibold text-navy group-hover:text-signal transition-colors">
+          <div class="mt-4 md:mt-5 flex items-center gap-1.5 text-[13px] md:text-sm font-semibold text-navy group-hover:text-signal transition-colors">
             Lihat Dokumen
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
           </div>
         </div>
-     
+      
       </div>
     </div>
   </section>
@@ -250,112 +249,114 @@
        RESUME
   ========================================================== -->
   <section id="resume" class="scroll-mt-20 bg-mist border-y border-line">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-18 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-14 md:py-24">
 
-      <div class="mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
-        <div class="max-w-xl">
+      <div class="mb-10 md:mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 md:gap-6">
+        <div class="max-w-xl text-center md:text-left mx-auto md:mx-0">
           <h2 class="font-serif text-2xl md:text-3xl font-semibold text-navy">Resume</h2>
-          <p class="mt-3 text-slate text-[15px]">
+          <p class="mt-2 md:mt-3 text-slate text-[14px] md:text-[15px]">
             Rangkuman pengalaman organisasi dan magang, riwayat pendidikan, dan keahlian.
           </p>
         </div>
-       
-        </a>
       </div>
 
-      <div class="mb-16">
-        <h3 class="font-serif text-xl font-semibold text-navy mb-8">Pengalaman Organisasi</h3>
+      <div class="mb-14 md:mb-16">
+        <h3 class="font-serif text-xl font-semibold text-navy mb-6 md:mb-8 text-center md:text-left">Pengalaman Organisasi</h3>
 
-        <div class="space-y-10 max-w-3xl">
+        <div class="space-y-8 md:space-y-10 max-w-3xl mx-auto md:mx-0">
 
-          <div class="timeline-item">
-            <span class="timeline-dot"></span>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h4 class="font-medium text-navy">Wakil Kepala Departemen Creative Media</h4>
-              <span class="text-sm text-slate">Februari 2024 — Desember 2025</span>
+          <div class="timeline-item relative pl-5 md:pl-0">
+            <span class="timeline-dot hidden md:block"></span>
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-y-1 mb-2">
+              <h4 class="font-medium text-navy text-[15px] md:text-base">Wakil Kepala Departemen Creative Media</h4>
+              <span class="text-[13px] md:text-sm text-slate">Februari 2024 — Desember 2025</span>
             </div>
-            <p class="text-sm text-slate mb-3">KSPM FEB UTM</p>
-            <ul class="text-sm text-ink space-y-1.5 list-disc list-inside marker:text-signal">
+            <p class="text-[13px] md:text-sm text-slate mb-3 font-medium">KSPM FEB UTM</p>
+            <ul class="text-[13.5px] md:text-sm text-ink space-y-1.5 list-disc list-outside ml-4 marker:text-signal">
               <li>Membantu Kepala Departemen dalam mendelegasikan tugas, mengkoordinasikan anggota tim, dan memastikan seluruh program kerja berjalan sesuai tenggat waktu.</li>
               <li>Bertanggung jawab atas tata kelola aset digital dan pengelolaan media sosial organisasi secara terstruktur.</li>
               <li>Mengeksekusi fungsi administratif melalui pengarsipan dan dokumentasi rapat pada acara internal, eksternal, hingga event berskala nasional.</li>
             </ul>
           </div>
 
-          <div class="timeline-item">
-            <span class="timeline-dot"></span>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h4 class="font-medium text-navy">Anggota Muda</h4>
-              <span class="text-sm text-slate">September 2022 — 2026</span>
+          <div class="timeline-item relative pl-5 md:pl-0">
+            <span class="timeline-dot hidden md:block"></span>
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-y-1 mb-2">
+              <h4 class="font-medium text-navy text-[15px] md:text-base">Anggota Muda</h4>
+              <span class="text-[13px] md:text-sm text-slate">September 2022 — 2026</span>
             </div>
-            <p class="text-sm text-slate mb-3">UKM TRIPLE-C</p>
-            <ul class="text-sm text-ink space-y-1.5 list-disc list-inside marker:text-signal">
+            <p class="text-[13px] md:text-sm text-slate mb-3 font-medium">UKM TRIPLE-C</p>
+            <ul class="text-[13.5px] md:text-sm text-ink space-y-1.5 list-disc list-outside ml-4 marker:text-signal">
               <li>Mengelola kebutuhan administratif dan dokumentasi (PDD) untuk menyukseskan acara Musyawarah Besar (MUBES).</li>
               <li>Menjalankan fungsi Hubungan Masyarakat (Humas) dalam menyelenggarakan acara pendidikan dan pelatihan anggota baru secara terkoordinasi.</li>
             </ul>
           </div>
 
-          <div class="timeline-item">
-            <span class="timeline-dot"></span>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h4 class="font-medium text-navy">Staff Profesional Departemen Creative Media</h4>
-              <span class="text-sm text-slate">Februari 2023 — Desember 2023</span>
+          <div class="timeline-item relative pl-5 md:pl-0">
+            <span class="timeline-dot hidden md:block"></span>
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-y-1 mb-2">
+              <h4 class="font-medium text-navy text-[15px] md:text-base">Staff Profesional Departemen Creative Media</h4>
+              <span class="text-[13px] md:text-sm text-slate">Februari 2023 — Desember 2023</span>
             </div>
-            <p class="text-sm text-slate mb-3">KSPM FEB UTM</p>
-            <ul class="text-sm text-ink space-y-1.5 list-disc list-inside marker:text-signal">
+            <p class="text-[13px] md:text-sm text-slate mb-3 font-medium">KSPM FEB UTM</p>
+            <ul class="text-[13.5px] md:text-sm text-ink space-y-1.5 list-disc list-outside ml-4 marker:text-signal">
               <li>Melakukan pendokumentasian dan pengarsipan visual secara tertib pada semua kegiatan yang diselenggarakan oleh organisasi.</li>
               <li>Mengelola jobdesk penyuntingan konten berita dan melakukan quality control sebelum dipublikasikan.</li>
             </ul>
           </div>
-  <div class="mb-16">
-        <h4 class="font-serif text-xl font-semibold text-navy mb-8">Pengalaman Magang</h3>
-
-            <div class="timeline-item">
-            <span class="timeline-dot"></span>
-            <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h4 class="font-medium text-navy">Departemen SDM dan Umum</h4>
-              <span class="text-sm text-slate">Maret 2025 — Juni 2025</span>
+          
+        </div>
+      </div>
+      
+      <div class="mb-14 md:mb-16">
+        <h3 class="font-serif text-xl font-semibold text-navy mb-6 md:mb-8 text-center md:text-left">Pengalaman Magang</h3>
+        <div class="space-y-8 md:space-y-10 max-w-3xl mx-auto md:mx-0">
+          <div class="timeline-item relative pl-5 md:pl-0">
+            <span class="timeline-dot hidden md:block"></span>
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-y-1 mb-2">
+              <h4 class="font-medium text-navy text-[15px] md:text-base">Departemen SDM dan Umum</h4>
+              <span class="text-[13px] md:text-sm text-slate">Maret 2025 — Juni 2025</span>
             </div>
-            <p class="text-sm text-slate mb-3">KAI DAOP 8 Surabaya</p>
-            <ul class="text-sm text-ink space-y-1.5 list-disc list-inside marker:text-signal">
+            <p class="text-[13px] md:text-sm text-slate mb-3 font-medium">KAI DAOP 8 Surabaya</p>
+            <ul class="text-[13.5px] md:text-sm text-ink space-y-1.5 list-disc list-outside ml-4 marker:text-signal">
               <li>Mendukung efisiensi operasional Departemen SDM dan Umum melalui pengarsipan dokumen yang terstruktur, pengelolaan lalu lintas surat-menyurat, serta mengeksekusi operasional program pelatihan secara end-to-end.</li>
-          </ul>
-
+            </ul>
+          </div>
         </div>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-12">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-12">
 
         <div>
-          <h3 class="font-serif text-xl font-semibold text-navy mb-6">Pendidikan</h3>
-          <div class="border-l border-line pl-5">
-            <h4 class="font-medium text-navy">Universitas Trunojoyo Madura</h4>
-            <p class="text-sm text-slate mt-1">Fakultas Ekonomi & Bisnis — Manajemen</p>
-            <p class="text-sm text-slate">2022 — 2026</p>
-            <p class="text-sm text-slate mt-1">IPK 3,70 / 4,00</p>
+          <h3 class="font-serif text-xl font-semibold text-navy mb-5 md:mb-6 text-center md:text-left">Pendidikan</h3>
+          <div class="border-l-2 border-line pl-4 md:pl-5 mb-5">
+            <h4 class="font-medium text-navy text-[15px] md:text-base">Universitas Trunojoyo Madura</h4>
+            <p class="text-[13.5px] md:text-sm text-slate mt-1">Fakultas Ekonomi & Bisnis — Manajemen</p>
+            <p class="text-[13.5px] md:text-sm text-slate">2022 — 2026</p>
+            <p class="text-[13.5px] md:text-sm text-slate mt-1">IPK 3,70 / 4,00</p>
           </div>
-          <div class="border-l border-line pl-5">
-            <h4 class="font-medium text-navy">MA Negeri 2 Lamongan</h4>
-            <p class="text-sm text-slate mt-1">ilmu pengetahuan sosial</p>
-            <p class="text-sm text-slate">2019 — 2022</p>
+          <div class="border-l-2 border-line pl-4 md:pl-5 mb-5">
+            <h4 class="font-medium text-navy text-[15px] md:text-base">MA Negeri 2 Lamongan</h4>
+            <p class="text-[13.5px] md:text-sm text-slate mt-1">Ilmu Pengetahuan Sosial</p>
+            <p class="text-[13.5px] md:text-sm text-slate">2019 — 2022</p>
           </div>
-          <div class="border-l border-line pl-5">
-            <h4 class="font-medium text-navy">MTs Negeri 1 Lamongan</h4>
-            <p class="text-sm text-slate">2016 — 2019</p>
+          <div class="border-l-2 border-line pl-4 md:pl-5">
+            <h4 class="font-medium text-navy text-[15px] md:text-base">MTs Negeri 1 Lamongan</h4>
+            <p class="text-[13.5px] md:text-sm text-slate mt-1">2016 — 2019</p>
           </div>
         </div>
 
         <div>
-          <h3 class="font-serif text-xl font-semibold text-navy mb-6">Keahlian</h3>
-          <div class="flex flex-wrap gap-2.5">
-            <span class="px-3.5 py-1.5 text-sm rounded-full bg-white border border-line text-ink">Microsoft Excel</span>
-            <span class="px-3.5 py-1.5 text-sm rounded-full bg-white border border-line text-ink">Microsoft Word</span>
-            <span class="px-3.5 py-1.5 text-sm rounded-full bg-white border border-line text-ink">Microsoft PowerPoint</span>
-            <span class="px-3.5 py-1.5 text-sm rounded-full bg-white border border-line text-ink">Administratif</span>
-            <span class="px-3.5 py-1.5 text-sm rounded-full bg-white border border-line text-ink">Analisis Data</span>
-            <span class="px-3.5 py-1.5 text-sm rounded-full bg-white border border-line text-ink">Komunikatif</span>
-            <span class="px-3.5 py-1.5 text-sm rounded-full bg-white border border-line text-ink">Adaptif</span>
-            <span class="px-3.5 py-1.5 text-sm rounded-full bg-white border border-line text-ink">Kerja Tim</span>
+          <h3 class="font-serif text-xl font-semibold text-navy mb-5 md:mb-6 text-center md:text-left">Keahlian</h3>
+          <div class="flex flex-wrap justify-center md:justify-start gap-2.5">
+            <span class="px-3 md:px-3.5 py-1.5 text-[13px] md:text-sm rounded-full bg-white border border-line text-ink">Microsoft Excel</span>
+            <span class="px-3 md:px-3.5 py-1.5 text-[13px] md:text-sm rounded-full bg-white border border-line text-ink">Microsoft Word</span>
+            <span class="px-3 md:px-3.5 py-1.5 text-[13px] md:text-sm rounded-full bg-white border border-line text-ink">Microsoft PowerPoint</span>
+            <span class="px-3 md:px-3.5 py-1.5 text-[13px] md:text-sm rounded-full bg-white border border-line text-ink">Administratif</span>
+            <span class="px-3 md:px-3.5 py-1.5 text-[13px] md:text-sm rounded-full bg-white border border-line text-ink">Analisis Data</span>
+            <span class="px-3 md:px-3.5 py-1.5 text-[13px] md:text-sm rounded-full bg-white border border-line text-ink">Komunikatif</span>
+            <span class="px-3 md:px-3.5 py-1.5 text-[13px] md:text-sm rounded-full bg-white border border-line text-ink">Adaptif</span>
+            <span class="px-3 md:px-3.5 py-1.5 text-[13px] md:text-sm rounded-full bg-white border border-line text-ink">Kerja Tim</span>
           </div>
         </div>
 
@@ -367,82 +368,82 @@
        KONTAK
   ========================================================== -->
   <section id="kontak" class="scroll-mt-20">
-    <div class="max-w-6xl mx-auto px-6 md:px-10 py-18 md:py-24">
+    <div class="max-w-6xl mx-auto px-6 md:px-10 py-14 md:py-24">
 
-      <div class="mb-12 max-w-xl">
+      <div class="mb-10 md:mb-12 max-w-xl text-center md:text-left mx-auto md:mx-0">
         <h2 class="font-serif text-2xl md:text-3xl font-semibold text-navy">Kontak</h2>
-        <p class="mt-3 text-slate text-[15px]">
+        <p class="mt-2 md:mt-3 text-slate text-[14px] md:text-[15px]">
           Silakan hubungi saya melalui formulir, WhatsApp, atau email untuk peluang kolaborasi maupun pekerjaan.
         </p>
       </div>
 
-      <div class="grid lg:grid-cols-[1.2fr,0.8fr] gap-12">
+      <div class="grid lg:grid-cols-[1.2fr,0.8fr] gap-10 md:gap-12">
 
         <!-- Formulir kontak -->
-        <form action="https://formspree.io/f/mkjggqgg" method="POST" id="contactForm" class="space-y-5">
-          <div class="grid sm:grid-cols-2 gap-5">
+        <form action="https://formspree.io/f/mkjggqgg" method="POST" id="contactForm" class="space-y-4 md:space-y-5">
+          <div class="grid sm:grid-cols-2 gap-4 md:gap-5">
             <div>
-              <label for="nama" class="block text-sm font-medium text-ink mb-1.5">Nama</label>
+              <label for="nama" class="block text-[13px] md:text-sm font-medium text-ink mb-1.5">Nama</label>
               <input type="text" id="nama" name="nama" required
-                     class="w-full rounded-lg border border-line px-4 py-2.5 text-sm bg-white focus:border-navy transition-colors">
+                     class="w-full rounded-lg border border-line px-4 py-2.5 text-sm bg-white focus:border-navy transition-colors outline-none">
             </div>
             <div>
-              <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email</label>
+              <label for="email" class="block text-[13px] md:text-sm font-medium text-ink mb-1.5">Email</label>
               <input type="email" id="email" name="email" required
-                     class="w-full rounded-lg border border-line px-4 py-2.5 text-sm bg-white focus:border-navy transition-colors">
+                     class="w-full rounded-lg border border-line px-4 py-2.5 text-sm bg-white focus:border-navy transition-colors outline-none">
             </div>
           </div>
 
           <div>
-            <label for="subjek" class="block text-sm font-medium text-ink mb-1.5">Subjek</label>
+            <label for="subjek" class="block text-[13px] md:text-sm font-medium text-ink mb-1.5">Subjek</label>
             <input type="text" id="subjek" name="subjek" required
-                   class="w-full rounded-lg border border-line px-4 py-2.5 text-sm bg-white focus:border-navy transition-colors">
+                   class="w-full rounded-lg border border-line px-4 py-2.5 text-sm bg-white focus:border-navy transition-colors outline-none">
           </div>
 
           <div>
-            <label for="pesan" class="block text-sm font-medium text-ink mb-1.5">Pesan</label>
+            <label for="pesan" class="block text-[13px] md:text-sm font-medium text-ink mb-1.5">Pesan</label>
             <textarea id="pesan" name="pesan" rows="5" required
-                      class="w-full rounded-lg border border-line px-4 py-2.5 text-sm bg-white focus:border-navy transition-colors resize-none"></textarea>
+                      class="w-full rounded-lg border border-line px-4 py-2.5 text-sm bg-white focus:border-navy transition-colors resize-none outline-none"></textarea>
           </div>
 
           <button type="submit"
-                  class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-navy text-white text-sm font-medium hover:bg-navydeep transition-colors">
+                  class="w-full sm:w-auto inline-flex justify-center items-center gap-2 px-6 py-3 rounded-full bg-navy text-white text-sm font-medium hover:bg-navydeep transition-colors">
             Kirim Pesan
           </button>
           <p id="formNote" class="text-xs text-slate pt-1"></p>
         </form>
 
         <!-- Kontak langsung & media sosial -->
-        <div class="space-y-8">
+        <div class="space-y-6 md:space-y-8">
 
-          <div>
+          <div class="text-center md:text-left">
             <p class="text-sm font-medium text-navy mb-1.5">Alamat</p>
-            <p class="text-sm text-slate">Babat, Lamongan, Jawa Timur, Indonesia</p>
+            <p class="text-[13px] md:text-sm text-slate">Babat, Lamongan, Jawa Timur, Indonesia</p>
           </div>
 
           <div class="space-y-3.5">
             <a href="https://wa.me/6289686903350?text=Halo%20saya%20melihat%20website%20Anda"
                target="_blank" rel="noopener"
-               class="flex items-center gap-3 w-full px-5 py-3.5 rounded-xl border border-line hover:border-navy transition-colors">
+               class="flex items-center justify-center md:justify-start gap-3 w-full px-5 py-3.5 rounded-xl border border-line hover:border-navy transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 text-navy shrink-0" fill="currentColor">
                 <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.02c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.11.11-1.79-.11-.41-.13-.94-.31-1.62-.6-2.86-1.23-4.72-4.1-4.86-4.29-.14-.19-1.16-1.55-1.16-2.95 0-1.4.73-2.09 1-2.38.26-.28.57-.35.76-.35h.55c.18 0 .41-.03.64.49.24.55.81 1.9.88 2.04.07.14.12.31.02.5-.09.19-.14.3-.28.46-.14.16-.29.36-.42.48-.14.14-.28.29-.12.56.16.28.71 1.17 1.53 1.9 1.05.94 1.94 1.23 2.21 1.37.28.14.44.12.6-.07.16-.19.68-.79.87-1.06.18-.28.37-.23.61-.14.25.09 1.58.75 1.85.88.28.14.46.21.53.32.07.12.07.68-.17 1.35Z"/>
               </svg>
-              <span class="text-sm font-medium text-ink">Chat via WhatsApp</span>
+              <span class="text-[13.5px] md:text-sm font-medium text-ink">Chat via WhatsApp</span>
             </a>
 
             <a href="mailto:mochassyava@gmail.com"
-               class="flex items-center gap-3 w-full px-5 py-3.5 rounded-xl border border-line hover:border-navy transition-colors">
+               class="flex items-center justify-center md:justify-start gap-3 w-full px-5 py-3.5 rounded-xl border border-line hover:border-navy transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 text-navy shrink-0" fill="none" stroke="currentColor" stroke-width="1.7">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z"/>
                 <path stroke-linecap="round" stroke-linejoin="round" d="m4 7 8 6 8-6"/>
               </svg>
-              <span class="text-sm font-medium text-ink">Kirim Email</span>
+              <span class="text-[13.5px] md:text-sm font-medium text-ink">Kirim Email</span>
             </a>
           </div>
 
           <div>
-            <p class="text-sm font-medium text-navy mb-3.5">Media Sosial</p>
-            <div class="flex items-center gap-3">
+            <p class="text-sm font-medium text-navy mb-3 md:mb-3.5 text-center md:text-left">Media Sosial</p>
+            <div class="flex items-center justify-center md:justify-start gap-3">
 
               <!-- LinkedIn -->
               <a href="https://id.linkedin.com/in/mochammad-assyava-aulia-firdaus-08706b310" target="_blank" rel="noopener" aria-label="LinkedIn"
@@ -489,24 +490,24 @@
 <!-- =========================================================
      MODAL PREVIEW DOKUMEN
 ========================================================== -->
-<div id="previewModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-ink/80 backdrop-blur-sm p-4 md:p-8 transition-opacity">
+<div id="previewModal" class="fixed inset-0 z-[100] hidden flex-col items-center justify-center bg-ink/90 backdrop-blur-sm p-4 md:p-8 transition-opacity">
   <div class="bg-paper w-full max-w-5xl h-[85vh] md:h-[90vh] rounded-2xl shadow-2xl flex flex-col overflow-hidden relative">
     
     <!-- Header Modal -->
-    <div class="flex items-center justify-between px-6 py-4 border-b border-line bg-white">
-      <h3 id="modalTitle" class="font-serif text-lg font-semibold text-navy">Preview Dokumen</h3>
-      <div class="flex items-center gap-4">
+    <div class="flex items-center justify-between px-5 md:px-6 py-4 border-b border-line bg-white">
+      <h3 id="modalTitle" class="font-serif text-[15px] md:text-lg font-semibold text-navy line-clamp-1 pr-2">Preview Dokumen</h3>
+      <div class="flex items-center gap-3">
         
         <!-- Tombol Unduh (Hanya muncul untuk CV) -->
-        <a id="modalDownloadBtn" href="#" download class="hidden inline-flex items-center gap-2 px-5 py-2 rounded-full bg-navy text-white text-sm font-medium hover:bg-navydeep transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <a id="modalDownloadBtn" href="#" download class="hidden inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy text-white text-[13px] md:text-sm font-medium hover:bg-navydeep transition-colors whitespace-nowrap">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 hidden sm:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
           </svg>
-          Unduh CV
+          Unduh
         </a>
         
         <!-- Tombol Tutup -->
-        <button onclick="closePreview()" class="p-2 bg-mist rounded-full text-slate hover:text-signal hover:bg-line transition-colors" title="Tutup">
+        <button onclick="closePreview()" class="p-2 bg-mist rounded-full text-slate hover:text-signal hover:bg-line transition-colors focus:outline-none" title="Tutup">
           <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -514,7 +515,7 @@
       </div>
     </div>
 
-    <!-- Body Modal (Area Preview PDF/Gambar) -->
+    <!-- Body Modal -->
     <div class="flex-grow bg-slate-100 relative">
       <iframe id="modalIframe" src="" class="absolute inset-0 w-full h-full border-0"></iframe>
     </div>
@@ -526,7 +527,7 @@
      FOOTER
 ========================================================== -->
 <footer class="bg-navydeep text-white/70">
-  <div class="max-w-6xl mx-auto px-6 md:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
+  <div class="max-w-6xl mx-auto px-6 md:px-10 py-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-center sm:text-left">
     <p>© <span id="year"></span> Mochammad Assyava' Aulia Firdaus.</p>
     <p>Property owned by Assyava'</p>
   </div>
@@ -534,36 +535,26 @@
 
 <!-- ====== JAVASCRIPT ====== -->
 <script>
-// ==========================================
-  // 1. FUNGSI UNTUK PREVIEW DOKUMEN (MODAL)
-  // ==========================================
   function openPreview(fileUrl, title, isCV = false) {
     const modal = document.getElementById('previewModal');
     const iframe = document.getElementById('modalIframe');
     const modalTitle = document.getElementById('modalTitle');
     const downloadBtn = document.getElementById('modalDownloadBtn');
 
-    // 1. Rangkai URL lengkap GitHub Pages Anda dengan nama file PDF yang sedang diklik
     const githubUrl = "https://fir-da.github.io/cv-moch-assyava-af/" + fileUrl;
-    
-    // 2. Gunakan Google Viewer agar PDF langsung tampil (kebal IDM & tidak terunduh otomatis)
     iframe.src = "https://docs.google.com/viewer?url=" + encodeURIComponent(githubUrl) + "&embedded=true";
-    
-    // Ubah judul modal sesuai tombol yang diklik
     modalTitle.textContent = title;
 
-    // Cek apakah ini CV (true) atau dokumen biasa (false)
     if (isCV) {
-      downloadBtn.href = fileUrl; // Pasang link unduh ke tombol
-      downloadBtn.classList.remove('hidden'); // Munculkan tombol
+      downloadBtn.href = fileUrl;
+      downloadBtn.classList.remove('hidden');
     } else {
-      downloadBtn.classList.add('hidden'); // Sembunyikan tombol
+      downloadBtn.classList.add('hidden');
     }
 
-    // Tampilkan Modal di layar
     modal.classList.remove('hidden');
     modal.classList.add('flex');
-    document.body.style.overflow = 'hidden'; // Kunci scroll halaman belakang
+    document.body.style.overflow = 'hidden'; 
   }
 
   function closePreview() {
@@ -572,15 +563,12 @@
     
     modal.classList.add('hidden');
     modal.classList.remove('flex');
-    document.body.style.overflow = 'auto'; // Buka kembali scroll halaman
-    iframe.src = ""; // Kosongkan iframe agar hemat memori
+    document.body.style.overflow = 'auto'; 
+    iframe.src = ""; 
   }
-  // ==========================================
-  // 2. FUNGSI TAMPILAN WEB (HEADER, MENU, DLL)
-  // ==========================================
+
   document.addEventListener("DOMContentLoaded", () => {
     
-    // 1. Logika untuk efek scroll pada header
     const header = document.getElementById('header');
     if (header) {
       const onScroll = () => header.classList.toggle('compact', window.scrollY > 40);
@@ -588,7 +576,6 @@
       onScroll();
     }
 
-    // 2. Logika untuk mengubah teks logo "Assyava" menjadi "AS"
     const logoText = document.getElementById('logoText');
     if (logoText) {
       window.addEventListener('scroll', () => {
@@ -600,13 +587,11 @@
       });
     }
 
-    // 3. Logika untuk otomatisasi tahun di Footer
     const yearSpan = document.getElementById('year');
     if (yearSpan) {
       yearSpan.textContent = new Date().getFullYear();
     }
 
-    // 4. Logika Menu Mobile
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const iconOpen = document.getElementById('iconOpen');
@@ -619,6 +604,16 @@
         iconClose.classList.toggle('hidden');
       });
     }
+
+    // Auto-close menu saat klik link di mobile
+    const mobileLinks = document.querySelectorAll('.nav-mobile-link');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      });
+    });
 
   });
 </script>
