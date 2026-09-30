@@ -10,21 +10,33 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+<!-- Terapkan tema tersimpan / preferensi sistem sebelum halaman tampil -->
+<script>
+  try {
+    if (localStorage.theme === 'dark' ||
+        (!localStorage.theme && matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  } catch (e) {}
+</script>
+
 <!-- ====== TAILWIND (CDN) + KONFIGURASI ====== -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
+    darkMode: 'class',
     theme: {
       extend: {
         colors: {
-          navy:     '#101B2D',
-          navydeep: '#0A1220',
-          paper:    '#FFFFFF',
-          mist:     '#F1F3F6',
-          line:     '#DDE1E7',
-          ink:      '#1B2430',
-          slate:    '#5B6472',
-          signal:   '#1E2C41',
+          navy:     'rgb(var(--navy) / <alpha-value>)',
+          navydeep: 'rgb(var(--navydeep) / <alpha-value>)',
+          paper:    'rgb(var(--paper) / <alpha-value>)',
+          mist:     'rgb(var(--mist) / <alpha-value>)',
+          line:     'rgb(var(--line) / <alpha-value>)',
+          ink:      'rgb(var(--ink) / <alpha-value>)',
+          slate:    'rgb(var(--slate) / <alpha-value>)',
+          signal:   'rgb(var(--signal) / <alpha-value>)',
+          accent:   'rgb(var(--accent) / <alpha-value>)',
         },
         fontFamily: {
           serif: ['Fraunces', 'serif'],
@@ -34,7 +46,179 @@
     }
   }
 </script>
-<link rel="stylesheet" href="css/style.css">
+<style>
+/* =========================================================
+   TEMA WARNA  (ubah angka RGB di sini untuk ganti warna)
+   ========================================================= */
+:root {
+  --paper:    249 250 252;   /* latar halaman */
+  --card:     255 255 255;   /* latar kartu & kolom isian */
+  --mist:     241 243 247;   /* latar section selang-seling */
+  --line:     221 226 235;   /* garis & border */
+  --ink:      22 32 51;      /* teks utama */
+  --slate:    90 100 118;     /* teks sekunder */
+  --signal:   51 72 115;     /* teks aksen (biru) */
+  --navy:     27 42 74;     /* judul & warna merek (biru logo) */
+  --navydeep: 17 26 46;       /* footer */
+  --btn:      27 42 74;     /* tombol */
+  --btn-h:    19 31 56;      /* tombol saat di-hover */
+  --accent:   240 168 28;    /* aksen emas */
+  --logotext: 43 79 158;     /* tulisan Assyava / AS di header */
+}
+:root.dark {
+  color-scheme: dark;
+  --paper:    10 17 32;
+  --card:     17 27 48;
+  --mist:     14 23 42;
+  --line:     34 48 77;
+  --ink:      232 238 250;
+  --slate:    147 161 189;
+  --signal:   150 180 255;
+  --navy:     226 234 255;
+  --navydeep: 6 11 22;
+  --btn:      63 109 242;
+  --btn-h:    84 127 250;
+  --logotext: 127 163 255;
+}
+
+/* =========================================================
+   PENYESUAIAN WARNA (kelas bawaan Tailwind -> ikut tema)
+   ========================================================= */
+body { transition: background-color .3s, color .3s; }
+.bg-white            { background-color: rgb(var(--card)) !important; }
+.bg-slate-100        { background-color: rgb(var(--mist)) !important; }
+.bg-navy             { background-color: rgb(var(--btn)) !important; }
+.hover\:bg-navydeep:hover { background-color: rgb(var(--btn-h)) !important; }
+.hover\:bg-slate-50:hover { background-color: rgb(var(--mist)) !important; }
+#home { background-image: linear-gradient(to bottom, rgb(var(--mist)), transparent) !important; }
+#previewModal { background-color: rgb(0 0 0 / .75) !important; }
+input::placeholder, textarea::placeholder { color: rgb(var(--slate) / .7); }
+
+/* Tulisan logo di header (Assyava / AS) berwarna biru */
+#logoText { color: rgb(var(--logotext)) !important; }
+
+/* Logo transparan: di mode gelap diubah jadi putih agar terbaca di latar gelap */
+.dark #header img {
+  mix-blend-mode: normal;
+  filter: brightness(0) invert(1);
+}
+
+/* =========================================================
+   FOKUS KEYBOARD, HEADER, MENU
+   ========================================================= */
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; }
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 3px;
+}
+
+#header > div { transition: padding .25s ease; }
+#header img   { transition: height .25s ease; }
+#header.compact > div { padding-top: .5rem !important; padding-bottom: .5rem !important; }
+#header.compact img   { height: 1.85rem; }
+
+.nav-link { position: relative; }
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: -6px;
+  height: 2px;
+  background: rgb(var(--accent));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .25s ease;
+}
+.nav-link:hover::after { transform: scaleX(1); }
+
+.theme-toggle {
+  width: 2.5rem; height: 2.5rem;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 9999px;
+  border: 1px solid rgb(var(--line));
+  color: rgb(var(--navy));
+  transition: background-color .2s;
+}
+.theme-toggle:hover { background-color: rgb(var(--mist)); }
+
+/* =========================================================
+   TIMELINE
+   ========================================================= */
+.timeline-item {
+  position: relative;
+  padding-left: 1.75rem;
+  border-left: 1px solid rgb(var(--line));
+}
+.timeline-item:last-child { border-left-color: transparent; }
+.timeline-dot {
+  position: absolute;
+  left: -5px; top: 0.35rem;
+  width: 9px; height: 9px;
+  border-radius: 9999px;
+  background: rgb(var(--accent));
+  border: 2px solid rgb(var(--paper));
+  box-shadow: 0 0 0 1px rgb(var(--line));
+}
+
+/* =========================================================
+   ANIMASI & STATUS FORMULIR
+   ========================================================= */
+.fade-in-up { animation: fadeInUp 0.8s ease-out both; }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.delay-1 { animation-delay: .1s; }
+.delay-2 { animation-delay: .22s; }
+.delay-3 { animation-delay: .34s; }
+.delay-4 { animation-delay: .46s; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+.btn-loading { opacity: 0.6; pointer-events: none; }
+.form-note-success { color: #1e9c6e; }
+.form-note-error   { color: #c0392b; }
+.dark .form-note-error { color: #f08a84; }
+
+/* =========================================================
+   BINGKAI FOTO PROFIL  (minimalis: garis emas bergeser di belakang foto)
+   Ubah 10px / 14px untuk mengatur jarak geser bingkai.
+   ========================================================= */
+#home div.relative { isolation: isolate; }
+
+/* bingkai di belakang foto */
+#home div.relative > div.absolute {
+  inset: 0 !important;
+  border: 1.5px solid rgb(var(--accent)) !important;
+  border-radius: 1.25rem !important;
+  background: rgb(var(--accent) / .07);
+  transform: translate(10px, 10px);
+  transition: transform .3s ease;
+}
+
+/* foto */
+#home div.relative > img {
+  border: 0 !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 18px 36px -18px rgb(var(--navy) / .55) !important;
+}
+.dark #home div.relative > img { box-shadow: 0 18px 36px -16px rgb(0 0 0 / .7) !important; }
+
+@media (min-width: 768px) {
+  #home div.relative > div.absolute { border-radius: 1.75rem !important; transform: translate(14px, 14px); }
+  #home div.relative > img          { border-radius: 1.75rem !important; }
+}
+
+/* saat di-hover, bingkai bergeser mendekat ke foto */
+#home div.relative:hover > div.absolute { transform: translate(5px, 5px); }
+
+/* Teks logo "Assyava" / "AS": biru logo di mode terang */
+#logoText { color: #0B2D8A !important; transition: color .3s; }
+.dark #logoText { color: rgb(var(--navy)) !important; }
+</style>
 </head>
 
 <body class="bg-paper text-ink font-sans antialiased">
@@ -52,12 +236,15 @@
       <a href="#sertifikasi" class="nav-link hover:text-navy transition-colors">Sertifikasi</a>
       <a href="#resume" class="nav-link hover:text-navy transition-colors">Resume</a>
       <a href="#kontak" class="nav-link hover:text-navy transition-colors">Kontak</a>
+      <button type="button" class="theme-toggle" aria-label="Ganti tema terang/gelap" title="Ganti tema"><svg class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg><svg class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg></button>
       <a href="#kontak"
          class="ml-2 inline-flex items-center px-4 py-2 rounded-full bg-navy text-white text-sm font-medium hover:bg-navydeep transition-colors">
         Hubungi Saya
       </a>
     </nav>
 
+    <div class="md:hidden flex items-center gap-2">
+      <button type="button" class="theme-toggle" aria-label="Ganti tema terang/gelap" title="Ganti tema"><svg class="w-5 h-5 dark:hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg><svg class="w-5 h-5 hidden dark:block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg></button>
     <button id="menuBtn" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu"
             class="md:hidden w-10 h-10 flex items-center justify-center rounded-full border border-line focus:outline-none focus:ring-2 focus:ring-navy/20">
       <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
@@ -67,6 +254,7 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
+    </div>
   </div>
 
   <div id="mobileMenu" class="hidden md:hidden border-t border-line bg-paper shadow-lg absolute w-full">
@@ -170,7 +358,7 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
 
        <!-- Kartu 1: Ijazah -->
-        <div onclick="openPreview('ijazah.pdf', 'Akreditasi & Ijazah', false)" 
+        <div onclick="openPreview('sample.pdf', 'Akreditasi & Ijazah', false)" 
              class="border border-line rounded-2xl p-5 md:p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer active:scale-[0.98]">
           <span class="text-[11px] md:text-xs font-medium text-signal mb-2 md:mb-3">Pendidikan Formal</span>
           <h3 class="font-serif text-base md:text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
@@ -188,7 +376,7 @@
         </div>
 
         <!-- Kartu 2: Sertifikat BNSP -->
-        <div onclick="openPreview('sertifikat-bnsp.pdf', 'Badan Nasional Sertifikasi Profesi', false)" 
+        <div onclick="openPreview('Mochammad_Assyava_Aulia_Firdaus__BNSP_.pdf', 'Badan Nasional Sertifikasi Profesi', false)" 
              class="border border-line rounded-2xl p-5 md:p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer active:scale-[0.98]">
           <span class="text-[11px] md:text-xs font-medium text-signal mb-2 md:mb-3">Sertifikasi Profesi</span>
           <h3 class="font-serif text-base md:text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
@@ -206,7 +394,7 @@
         </div>
 
         <!-- Kartu 3: Sertifikat BKI -->
-        <div onclick="openPreview('sertifikat-bki.pdf', 'Badan Kurasi Indonesia', false)" 
+        <div onclick="openPreview('Mochammad_Assyava_Aulia_Firdaus__BKI_.pdf', 'Badan Kurasi Indonesia', false)" 
              class="border border-line rounded-2xl p-5 md:p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer active:scale-[0.98]">
           <span class="text-[11px] md:text-xs font-medium text-signal mb-2 md:mb-3">Sertifikasi Profesi</span>
           <h3 class="font-serif text-base md:text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
@@ -224,7 +412,7 @@
         </div>
 
         <!-- Kartu 4: Data Analyst -->
-        <div onclick="openPreview('sertifikat-iblu.pdf', 'Iblu Academy', false)" 
+        <div onclick="openPreview('Mochammad_Assyava_Aulia_Firdaus__IBLU_.pdf', 'Iblu Academy', false)" 
              class="border border-line rounded-2xl p-5 md:p-6 flex flex-col bg-white hover:border-navy hover:shadow-lg transition-all group cursor-pointer active:scale-[0.98]">
           <span class="text-[11px] md:text-xs font-medium text-signal mb-2 md:mb-3">Pelatihan</span>
           <h3 class="font-serif text-base md:text-lg font-semibold text-navy leading-snug group-hover:text-signal transition-colors">
@@ -615,6 +803,14 @@
       });
     });
 
+  });
+
+  // Tombol ganti tema terang / gelap
+  document.querySelectorAll('.theme-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark');
+      try { localStorage.theme = isDark ? 'dark' : 'light'; } catch (e) {}
+    });
   });
 </script>
 </body>
