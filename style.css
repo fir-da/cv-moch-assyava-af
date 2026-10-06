@@ -394,3 +394,22 @@ header.compact .logo-mark {
   }
   :root.dark #kontak div > a[aria-label][target="_blank"]::after { display: none; }
 }
+
+
+/* =========================================================
+   TULISAN DI SAMPING LOGO (Assyava / AS)
+   - Mode gelap: putih bersih
+   - Selalu terlihat, baik sebelum maupun sesudah scroll
+   ========================================================= */
+#header #logoText,
+#header.compact #logoText {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline !important;
+}
+
+:root.dark #header #logoText,
+:root.dark #header.compact #logoText {
+  color: #ffffff !important;
+  text-shadow: 0 0 12px rgb(var(--btn) / .55);   /* pendar halus, hapus baris ini jika tidak mau */
+}
